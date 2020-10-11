@@ -1,7 +1,8 @@
 # dotfiles
-my customized dotfiles
 
-## install requirements
+Customized dotfiles and installation of base tools for my local environment.
+
+## tools installation
 
 ```sh
 # === base tools for terminal ==================================================
