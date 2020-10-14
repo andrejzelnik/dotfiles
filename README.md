@@ -7,7 +7,7 @@ Customized dotfiles and installation of base tools for my local environment.
 ```sh
 # === base tools for terminal ==================================================
 # install Homebrew - package manager for macOS (https://brew.sh/)
-cd /usr/local && mkdir -p homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 brew update
 
