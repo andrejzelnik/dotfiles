@@ -45,6 +45,11 @@ brew install jq
 # install kubernetes cli (https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 brew install kubectl
 
+# install terraform cli (https://learn.hashicorp.com/tutorials/terraform/install-cli)
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+terraform -install-autocomplete
+
 # install sql server cli (https://cloudblogs.microsoft.com/sqlserver/2017/05/16/sql-server-command-line-tools-for-macos-released/)
 brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release
 brew update
