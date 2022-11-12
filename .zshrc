@@ -26,3 +26,9 @@ source /usr/local/etc/bash_completion.d/az
 
 # to customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# libpq is keg-only, put it in PATH:
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# aws-autocompletion
+export PATH="/usr/local/bin/aws_completer:$PATH"
