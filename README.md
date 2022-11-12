@@ -63,8 +63,11 @@ arch -x86_64 brew install msodbcsql mssql-tools
 # install postgresql server cli
 arch -x86_64 brew install libpq
 
-# install aws-cli ()
+# install aws-cli (https://formulae.brew.sh/formula/awscli)
 arch -x86_64 brew install awscli
+
+# install gnupg (https://formulae.brew.sh/formula/gnupg)
+arch -x86_64 brew install gnupg
 ```
 
 ## usage
