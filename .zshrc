@@ -32,3 +32,5 @@ export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # aws-autocompletion
 export PATH="/usr/local/bin/aws_completer:$PATH"
+
+export GPG_TTY=$(tty)
