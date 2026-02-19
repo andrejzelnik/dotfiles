@@ -9,65 +9,63 @@ softwareupdate --install-rosetta
 
 # === base tools for terminal ==================================================
 # install Homebrew - package manager for macOS (https://brew.sh/)
-arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew update
 
 # install antigen - plugin manager for zsh (https://antigen.sharats.me/)
-arch -x86_64 brew install antigen
+brew install antigen
 
 # install oh-my-zsh - framework for zsh configuration (https://ohmyz.sh/)
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install nerd fonts (https://github.com/ryanoasis/nerd-fonts)
-brew tap homebrew/cask-fonts
-brew install font-hack-nerd-font
-# ad-hoc font installation
-cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
+brew install --cask font-hack-nerd-font
+brew install --cask font-droid-sans-mono-nerd-font
 
 # install powerlevel10k (https://github.com/romkatv/powerlevel10k)
-arch -x86_64 brew install romkatv/powerlevel10k/powerlevel10k
+brew install romkatv/powerlevel10k/powerlevel10k
 
 # install bash completion
-arch -x86_64 brew install bash-completion
+brew install bash-completion
 
 # install tmux - terminal multiplexer (https://github.com/tmux/tmux/wiki)
-arch -x86_64 brew install tmux
+brew install tmux
 
 # === other tools ==============================================================
 # install azure-cli (https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos)
-arch -x86_64 brew install azure-cli
+brew install azure-cli
 
 # install helm (https://helm.sh/docs/intro/install/)
-arch -x86_64 brew install helm
+brew install helm
 
 # install jq (https://formulae.brew.sh/formula/jq)
-arch -x86_64 brew install jq
+brew install jq
 
 # install kubernetes cli (https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-arch -x86_64 brew install kubectl
+brew install kubectl
 
-# install terraform cli (https://learn.hashicorp.com/tutorials/terraform/install-cli)
+# install terraform cli (https://developer.hashicorp.com/terraform/install)
 brew tap hashicorp/tap
-arch -x86_64 brew install hashicorp/tap/terraform
+brew install hashicorp/tap/terraform
 terraform -install-autocomplete
 
 # install terragrunt cli (https://terragrunt.gruntwork.io/docs/getting-started/install/)
-arch -x86_64 brew install terragrunt
+brew install terragrunt
 
-# install sql server cli (https://cloudblogs.microsoft.com/sqlserver/2017/05/16/sql-server-command-line-tools-for-macos-released/)
+# install sql server cli (https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-setup-tools)
 brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release
 brew update
-arch -x86_64 brew install msodbcsql mssql-tools
+brew install msodbcsql18 mssql-tools18
 
 # install postgresql server cli
-arch -x86_64 brew install libpq
+brew install libpq
 
 # install aws-cli (https://formulae.brew.sh/formula/awscli)
-arch -x86_64 brew install awscli
+brew install awscli
 
 # install gnupg (https://formulae.brew.sh/formula/gnupg)
-arch -x86_64 brew install gnupg
+brew install gnupg
 ```
 
 ## usage

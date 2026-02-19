@@ -8,9 +8,9 @@ fi
 DEFAULT_USER=$(whoami)
 
 # load antigen
-source /usr/local/share/antigen/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 # load theme
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # configuring completions
 if type brew &>/dev/null; then
@@ -22,15 +22,15 @@ fi
 
 # enable azure-cli completion
 autoload -U +X bashcompinit && bashcompinit
-source /usr/local/etc/bash_completion.d/az
+source $(brew --prefix)/etc/bash_completion.d/az
 
 # to customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # libpq is keg-only, put it in PATH:
-export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
 
 # aws-autocompletion
-export PATH="/usr/local/bin/aws_completer:$PATH"
+complete -C "$(brew --prefix)/bin/aws_completer" aws
 
 export GPG_TTY=$(tty)
