@@ -5,8 +5,6 @@ Customized dotfiles and installation of base tools for my local environment.
 ## tools installation
 
 ```sh
-softwareupdate --install-rosetta
-
 # === base tools for terminal ==================================================
 # install Homebrew - package manager for macOS (https://brew.sh/)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -19,6 +17,11 @@ brew update
 
 # install Zim - framework for zsh (https://zimfw.sh/)
 curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+
+# install Anthropic's Claude Code - Terminal
+brew install --cask claude-code
+
+
 
 # install nerd fonts (https://github.com/ryanoasis/nerd-fonts)
 brew install --cask font-hack-nerd-font
