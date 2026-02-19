@@ -17,18 +17,12 @@ eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 
 brew update
 
-# install antigen - plugin manager for zsh (https://antigen.sharats.me/)
-brew install antigen
-
-# install oh-my-zsh - framework for zsh configuration (https://ohmyz.sh/)
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# install Zim - framework for zsh (https://zimfw.sh/)
+curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 
 # install nerd fonts (https://github.com/ryanoasis/nerd-fonts)
 brew install --cask font-hack-nerd-font
 brew install --cask font-droid-sans-mono-nerd-font
-
-# install powerlevel10k (https://github.com/romkatv/powerlevel10k)
-brew install romkatv/powerlevel10k/powerlevel10k
 
 # install bash completion
 brew install bash-completion
@@ -77,7 +71,7 @@ brew install gnupg
 ```sh
 # copy dotfiles
 cd ~/
-curl -fLo ".antigenrc" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.antigenrc
+curl -fLo ".zimrc" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zimrc
 curl -fLo ".p10k.zsh" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.p10k.zsh
 curl -fLo ".zshrc" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zshrc
 # to use zsh run

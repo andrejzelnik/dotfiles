@@ -7,37 +7,23 @@ fi
 
 DEFAULT_USER=$(whoami)
 
-# initialize Homebrew (sets PATH, MANPATH, etc.)
-if [[ -f /opt/homebrew/bin/brew ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"   # Apple Silicon
-elif [[ -f /usr/local/bin/brew ]]; then
-  eval "$(/usr/local/bin/brew shellenv)"       # Intel
-fi
+# initialize Homebrew for non-login shells (login shells get this from ~/.zprofile)
+[[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 
-# load antigen
-source $(brew --prefix)/share/antigen/antigen.zsh
-# load theme
-source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
-
-# configuring completions
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  plugins=(… zsh-completions)
-  autoload -U compinit && compinit -i
-fi
+# start Zim
+source ${ZIM_HOME:-~/.zim}/init.zsh
 
 # enable azure-cli completion
 autoload -U +X bashcompinit && bashcompinit
 source $(brew --prefix)/etc/bash_completion.d/az
 
-# to customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# to customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# libpq is keg-only, put it in PATH:
+# libpq is keg-only, put it in PATH
 export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
 
-# aws-autocompletion
+# aws autocompletion
 complete -C "$(brew --prefix)/bin/aws_completer" aws
 
 export GPG_TTY=$(tty)
