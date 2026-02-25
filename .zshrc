@@ -1,5 +1,15 @@
 DEFAULT_USER=$(whoami)
 
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_REDUCE_BLANKS SHARE_HISTORY
+
+# Editor
+export EDITOR=vim
+export VISUAL=vim
+
 # initialize Homebrew for non-login shells (login shells get this from ~/.zprofile)
 [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 

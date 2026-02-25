@@ -42,9 +42,14 @@ curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | 
 cd ~/
 curl -fLo ".zimrc"     https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zimrc
 curl -fLo ".zshrc"     https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zshrc
-curl -fLo ".gitconfig" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.gitconfig
-curl -fLo ".tmux.conf" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.tmux.conf
-curl -fLo "macos.sh"   https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/macos.sh && chmod +x macos.sh
+curl -fLo ".gitconfig"        https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.gitconfig
+curl -fLo ".gitignore_global" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.gitignore_global
+curl -fLo ".tmux.conf"        https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.tmux.conf
+curl -fLo "macos.sh"          https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/macos.sh && chmod +x macos.sh
+
+# SSH config (skip if you already have one)
+mkdir -p ~/.ssh && chmod 700 ~/.ssh
+curl -fLo ".ssh/config" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.ssh/config && chmod 600 .ssh/config
 ```
 
 ### 5. Install tools

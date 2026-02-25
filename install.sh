@@ -40,9 +40,17 @@ success "Zim ready"
 info "Downloading dotfiles..."
 curl -fsSL -o ~/.zimrc     "$DOTFILES_RAW/.zimrc"
 curl -fsSL -o ~/.zshrc    "$DOTFILES_RAW/.zshrc"
-curl -fsSL -o ~/.gitconfig "$DOTFILES_RAW/.gitconfig"
-curl -fsSL -o ~/.tmux.conf "$DOTFILES_RAW/.tmux.conf"
-curl -fsSL -o ~/macos.sh   "$DOTFILES_RAW/macos.sh" && chmod +x ~/macos.sh
+curl -fsSL -o ~/.gitconfig        "$DOTFILES_RAW/.gitconfig"
+curl -fsSL -o ~/.gitignore_global "$DOTFILES_RAW/.gitignore_global"
+curl -fsSL -o ~/.tmux.conf        "$DOTFILES_RAW/.tmux.conf"
+curl -fsSL -o ~/macos.sh          "$DOTFILES_RAW/macos.sh" && chmod +x ~/macos.sh
+
+# SSH config — only install if no existing config
+if [[ ! -f ~/.ssh/config ]]; then
+  mkdir -p ~/.ssh && chmod 700 ~/.ssh
+  curl -fsSL -o ~/.ssh/config "$DOTFILES_RAW/.ssh/config"
+  chmod 600 ~/.ssh/config
+fi
 success "Dotfiles downloaded"
 
 # ── 5. Tools via Brewfile ─────────────────────────────────────────────────────
