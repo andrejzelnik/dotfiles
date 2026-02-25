@@ -25,10 +25,6 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled     -bool false
 defaults write com.apple.screencapture type            -string "png"
 defaults write com.apple.screencapture disable-shadow  -bool true
 
-# Trackpad — tap to click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior              -int 1
-
 # Apply
 killall Dock    2>/dev/null || true
 killall Finder  2>/dev/null || true
