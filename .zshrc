@@ -10,7 +10,9 @@ setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_REDUCE_BLANKS SHARE_HISTORY
 export EDITOR=vim
 export VISUAL=vim
 
-# initialize Homebrew for non-login shells (login shells get this from ~/.zprofile)
+# Homebrew
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 
 # start Zim
@@ -29,6 +31,7 @@ complete -C "$(brew --prefix)/bin/aws_completer" aws
 export GPG_TTY=$(tty)
 
 # fzf
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --info=inline'
 eval "$(fzf --zsh)"
 
 # zoxide (smarter cd)
@@ -41,6 +44,9 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 source <(kubectl completion zsh)
 source <(helm completion zsh)
 source <(gh completion -s zsh)
+
+# mise (language version manager)
+eval "$(mise activate zsh)"
 
 # aliases
 alias k="kubectl"

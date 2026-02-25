@@ -35,6 +35,7 @@ brew "mssql-tools18"
 # Development
 brew "pre-commit"
 brew "git-delta"
+brew "mise"
 
 # Apps
 cask "claude-code"
