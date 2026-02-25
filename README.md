@@ -44,6 +44,7 @@ curl -fLo ".zimrc"     https://raw.githubusercontent.com/andrejzelnik/dotfiles/m
 curl -fLo ".zshrc"     https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zshrc
 curl -fLo ".gitconfig" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.gitconfig
 curl -fLo ".tmux.conf" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.tmux.conf
+curl -fLo "macos.sh"   https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/macos.sh && chmod +x macos.sh
 ```
 
 ### 5. Install tools
@@ -67,6 +68,16 @@ terraform -install-autocomplete
 
 # Set zsh as default shell
 chsh -s /bin/zsh
+
+# TPM — install tmux plugins (run inside a tmux session)
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# then press prefix + Ctrl-I inside tmux to fetch plugins
+```
+
+### 8. macOS defaults (optional)
+
+```sh
+~/macos.sh
 ```
 
 ---

@@ -42,6 +42,7 @@ curl -fsSL -o ~/.zimrc     "$DOTFILES_RAW/.zimrc"
 curl -fsSL -o ~/.zshrc    "$DOTFILES_RAW/.zshrc"
 curl -fsSL -o ~/.gitconfig "$DOTFILES_RAW/.gitconfig"
 curl -fsSL -o ~/.tmux.conf "$DOTFILES_RAW/.tmux.conf"
+curl -fsSL -o ~/macos.sh   "$DOTFILES_RAW/macos.sh" && chmod +x ~/macos.sh
 success "Dotfiles downloaded"
 
 # ── 5. Tools via Brewfile ─────────────────────────────────────────────────────
@@ -64,9 +65,16 @@ if command -v terraform &>/dev/null; then
   terraform -install-autocomplete 2>/dev/null || true
 fi
 
+# TPM (tmux plugin manager)
+if [[ ! -d ~/.tmux/plugins/tpm ]]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 # Set zsh as default shell
 if [[ "$SHELL" != "/bin/zsh" ]]; then
   chsh -s /bin/zsh
 fi
 
 success "Done! Restart your terminal."
+print ""
+print "Optional: run ~/macos.sh to apply macOS system defaults."

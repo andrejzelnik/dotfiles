@@ -27,8 +27,10 @@ eval "$(zoxide init zsh)"
 # bat as man pager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# kubectl completion
+# completions
 source <(kubectl completion zsh)
+source <(helm completion zsh)
+source <(gh completion -s zsh)
 
 # aliases
 alias k="kubectl"
