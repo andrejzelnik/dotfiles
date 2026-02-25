@@ -26,8 +26,8 @@ zmodule command-not-found
 zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
 
-# Prompt - powerlevel10k
-zmodule romkatv/powerlevel10k --use degit
+# Prompt
+zmodule eriner
 
 # Plugins (must come after completion)
 zmodule zsh-users/zsh-autosuggestions

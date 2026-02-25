@@ -38,9 +38,8 @@ success "Zim ready"
 
 # ── 4. Dotfiles ───────────────────────────────────────────────────────────────
 info "Downloading dotfiles..."
-curl -fsSL -o ~/.zimrc    "$DOTFILES_RAW/.zimrc"
-curl -fsSL -o ~/.p10k.zsh "$DOTFILES_RAW/.p10k.zsh"
-curl -fsSL -o ~/.zshrc    "$DOTFILES_RAW/.zshrc"
+curl -fsSL -o ~/.zimrc  "$DOTFILES_RAW/.zimrc"
+curl -fsSL -o ~/.zshrc "$DOTFILES_RAW/.zshrc"
 success "Dotfiles downloaded"
 
 # ── 5. Tools via Brewfile ─────────────────────────────────────────────────────
@@ -68,8 +67,4 @@ if [[ "$SHELL" != "/bin/zsh" ]]; then
   chsh -s /bin/zsh
 fi
 
-success "Done!"
-print ""
-print "Restart your terminal, then set the font in:"
-print "  Terminal → Settings → Profiles → Default → Font"
-print "  Recommended: Hack Nerd Font or DroidSansM Nerd Font"
+success "Done! Restart your terminal."

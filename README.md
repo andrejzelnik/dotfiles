@@ -40,9 +40,8 @@ curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | 
 
 ```sh
 cd ~/
-curl -fLo ".zimrc"   https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zimrc
-curl -fLo ".p10k.zsh" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.p10k.zsh
-curl -fLo ".zshrc"   https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zshrc
+curl -fLo ".zimrc"  https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zimrc
+curl -fLo ".zshrc" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zshrc
 ```
 
 ### 5. Install tools
@@ -68,21 +67,16 @@ terraform -install-autocomplete
 chsh -s /bin/zsh
 ```
 
-### 8. Terminal appearance
-
-In Terminal → Settings → Profiles → Default: set font to **Hack Nerd Font** or **DroidSansM Nerd Font**, adjust window size.
-
 ---
 
 ## What's installed
 
 | Category | Tools |
 |---|---|
-| Shell | zsh, Zim, Powerlevel10k |
+| Shell | zsh, Zim (eriner theme) |
 | Terminal | tmux, bash-completion |
 | Cloud | azure-cli, awscli, kubectl, helm |
 | IaC | terraform, terragrunt |
 | Data | jq, libpq (psql), mssql-tools18 |
 | Security | gnupg |
 | Apps | Claude Code |
-| Fonts | Hack Nerd Font, DroidSansM Nerd Font |

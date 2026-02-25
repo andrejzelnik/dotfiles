@@ -20,9 +20,5 @@ brew "libpq"
 brew "msodbcsql18"
 brew "mssql-tools18"
 
-# Fonts
-cask "font-hack-nerd-font"
-cask "font-droid-sans-mono-nerd-font"
-
 # Apps
 cask "claude-code"
