@@ -85,6 +85,14 @@ if [[ ! -d ~/.tmux/plugins/tpm ]]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
+# Git identity
+if [[ -z $(git config --global user.name) ]]; then
+  print -n "Git name:  "; read git_name
+  print -n "Git email: "; read git_email
+  git config --global user.name  "$git_name"
+  git config --global user.email "$git_email"
+fi
+
 # Set zsh as default shell
 if [[ "$SHELL" != "/bin/zsh" ]]; then
   chsh -s /bin/zsh

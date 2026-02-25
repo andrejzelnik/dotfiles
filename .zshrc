@@ -16,9 +16,14 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # start Zim
 source ${ZIM_HOME:-~/.zim}/init.zsh
 
-# enable azure-cli completion
+# enable azure-cli completion (cached, refreshed weekly)
 autoload -U +X bashcompinit && bashcompinit
-source $(brew --prefix)/etc/bash_completion.d/az
+_az_cache=~/.cache/zsh/az_completion.zsh
+if [[ ! -f $_az_cache ]] || [[ -n $(find $_az_cache -mtime +7 2>/dev/null) ]]; then
+  mkdir -p ~/.cache/zsh && cat $(brew --prefix)/etc/bash_completion.d/az > $_az_cache
+fi
+source $_az_cache
+unset _az_cache
 
 # libpq is keg-only, put it in PATH
 export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
