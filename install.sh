@@ -3,7 +3,8 @@
 
 set -e
 
-DOTFILES_RAW="https://raw.githubusercontent.com/andrejzelnik/dotfiles/master"
+DOTFILES_REPO="https://github.com/andrejzelnik/dotfiles"
+DOTFILES_DIR="$HOME/.dotfiles"
 
 info()    { print -P "%F{blue}==>%f %B$1%b" }
 success() { print -P "%F{green}✓%f $1" }
@@ -37,29 +38,35 @@ fi
 success "Zim ready"
 
 # ── 4. Dotfiles ───────────────────────────────────────────────────────────────
-info "Downloading dotfiles..."
-curl -fsSL -o ~/.zimrc     "$DOTFILES_RAW/.zimrc"
-curl -fsSL -o ~/.zshrc    "$DOTFILES_RAW/.zshrc"
-curl -fsSL -o ~/.gitconfig        "$DOTFILES_RAW/.gitconfig"
-curl -fsSL -o ~/.gitignore_global "$DOTFILES_RAW/.gitignore_global"
-curl -fsSL -o ~/.tmux.conf        "$DOTFILES_RAW/.tmux.conf"
-curl -fsSL -o ~/macos.sh          "$DOTFILES_RAW/macos.sh" && chmod +x ~/macos.sh
+info "Syncing dotfiles repo..."
+if [[ ! -d "$DOTFILES_DIR" ]]; then
+  git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
+else
+  git -C "$DOTFILES_DIR" pull
+fi
 
-# SSH config — only install if no existing config
+info "Linking dotfiles..."
+ln -sf "$DOTFILES_DIR/.zimrc"            ~/.zimrc
+ln -sf "$DOTFILES_DIR/.zshrc"            ~/.zshrc
+ln -sf "$DOTFILES_DIR/.gitconfig"        ~/.gitconfig
+ln -sf "$DOTFILES_DIR/.gitignore_global" ~/.gitignore_global
+ln -sf "$DOTFILES_DIR/.tmux.conf"        ~/.tmux.conf
+ln -sf "$DOTFILES_DIR/macos.sh"          ~/macos.sh
+
+# SSH config — only link if no existing config
 if [[ ! -f ~/.ssh/config ]]; then
   mkdir -p ~/.ssh && chmod 700 ~/.ssh
-  curl -fsSL -o ~/.ssh/config "$DOTFILES_RAW/.ssh/config"
+  ln -sf "$DOTFILES_DIR/.ssh/config" ~/.ssh/config
   chmod 600 ~/.ssh/config
 fi
-success "Dotfiles downloaded"
+success "Dotfiles linked"
 
 # ── 5. Tools via Brewfile ─────────────────────────────────────────────────────
 info "Installing tools via Brewfile..."
-curl -fsSL -o /tmp/Brewfile "$DOTFILES_RAW/Brewfile"
-brew bundle --file=/tmp/Brewfile
+brew bundle --file="$DOTFILES_DIR/Brewfile"
 success "Tools installed"
 
-# ── 6. Zim modules ───────────────────────────────────────────────────────────
+# ── 6. Zim modules ────────────────────────────────────────────────────────────
 info "Installing Zim modules..."
 source ~/.zshrc 2>/dev/null || true
 zimfw install
@@ -85,4 +92,5 @@ fi
 
 success "Done! Restart your terminal."
 print ""
-print "Optional: run ~/macos.sh to apply macOS system defaults."
+print "Optional:  ~/macos.sh          — apply macOS system defaults"
+print "To update: git -C ~/.dotfiles pull"

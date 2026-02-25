@@ -38,25 +38,27 @@ curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | 
 
 ### 4. Dotfiles
 
+Clone the repo and symlink everything into place:
+
 ```sh
-cd ~/
-curl -fLo ".zimrc"     https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zimrc
-curl -fLo ".zshrc"     https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zshrc
-curl -fLo ".gitconfig"        https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.gitconfig
-curl -fLo ".gitignore_global" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.gitignore_global
-curl -fLo ".tmux.conf"        https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.tmux.conf
-curl -fLo "macos.sh"          https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/macos.sh && chmod +x macos.sh
+git clone https://github.com/andrejzelnik/dotfiles ~/.dotfiles
+
+ln -sf ~/.dotfiles/.zimrc            ~/.zimrc
+ln -sf ~/.dotfiles/.zshrc            ~/.zshrc
+ln -sf ~/.dotfiles/.gitconfig        ~/.gitconfig
+ln -sf ~/.dotfiles/.gitignore_global ~/.gitignore_global
+ln -sf ~/.dotfiles/.tmux.conf        ~/.tmux.conf
+ln -sf ~/.dotfiles/macos.sh          ~/macos.sh
 
 # SSH config (skip if you already have one)
 mkdir -p ~/.ssh && chmod 700 ~/.ssh
-curl -fLo ".ssh/config" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.ssh/config && chmod 600 .ssh/config
+ln -sf ~/.dotfiles/.ssh/config ~/.ssh/config && chmod 600 ~/.ssh/config
 ```
 
 ### 5. Install tools
 
 ```sh
-curl -fLo "Brewfile" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/Brewfile
-brew bundle
+brew bundle --file=~/.dotfiles/Brewfile
 ```
 
 ### 6. Zim modules
@@ -84,6 +86,14 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```sh
 ~/macos.sh
 ```
+
+## Updating
+
+```sh
+git -C ~/.dotfiles pull
+```
+
+Symlinks mean changes take effect immediately — no re-running the install script.
 
 ---
 
