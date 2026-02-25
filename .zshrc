@@ -1,5 +1,3 @@
-DEFAULT_USER=$(whoami)
-
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
@@ -40,10 +38,17 @@ eval "$(zoxide init zsh)"
 # bat as man pager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# completions
-source <(kubectl completion zsh)
-source <(helm completion zsh)
-source <(gh completion -s zsh)
+# completions (cached, refreshed weekly)
+_load_completion() {
+  local cache=~/.cache/zsh/${1}_completion.zsh
+  if [[ ! -f $cache ]] || [[ -n $(find $cache -mtime +7 2>/dev/null) ]]; then
+    mkdir -p ~/.cache/zsh && "${@}" > $cache
+  fi
+  source $cache
+}
+_load_completion kubectl completion zsh
+_load_completion helm completion zsh
+_load_completion gh completion -s zsh
 
 # mise (language version manager)
 eval "$(mise activate zsh)"
