@@ -38,8 +38,10 @@ success "Zim ready"
 
 # ── 4. Dotfiles ───────────────────────────────────────────────────────────────
 info "Downloading dotfiles..."
-curl -fsSL -o ~/.zimrc  "$DOTFILES_RAW/.zimrc"
-curl -fsSL -o ~/.zshrc "$DOTFILES_RAW/.zshrc"
+curl -fsSL -o ~/.zimrc     "$DOTFILES_RAW/.zimrc"
+curl -fsSL -o ~/.zshrc    "$DOTFILES_RAW/.zshrc"
+curl -fsSL -o ~/.gitconfig "$DOTFILES_RAW/.gitconfig"
+curl -fsSL -o ~/.tmux.conf "$DOTFILES_RAW/.tmux.conf"
 success "Dotfiles downloaded"
 
 # ── 5. Tools via Brewfile ─────────────────────────────────────────────────────

@@ -40,8 +40,10 @@ curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | 
 
 ```sh
 cd ~/
-curl -fLo ".zimrc"  https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zimrc
-curl -fLo ".zshrc" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zshrc
+curl -fLo ".zimrc"     https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zimrc
+curl -fLo ".zshrc"     https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.zshrc
+curl -fLo ".gitconfig" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.gitconfig
+curl -fLo ".tmux.conf" https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/.tmux.conf
 ```
 
 ### 5. Install tools

@@ -17,3 +17,20 @@ export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
 complete -C "$(brew --prefix)/bin/aws_completer" aws
 
 export GPG_TTY=$(tty)
+
+# fzf
+eval "$(fzf --zsh)"
+
+# zoxide (smarter cd)
+eval "$(zoxide init zsh)"
+
+# bat as man pager
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# kubectl completion
+source <(kubectl completion zsh)
+
+# aliases
+alias k="kubectl"
+alias tf="terraform"
+alias cat="bat --pager=never"
