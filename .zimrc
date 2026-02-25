@@ -1,0 +1,35 @@
+# Core Zim modules
+zmodule environment
+zmodule input
+zmodule termtitle
+zmodule utility
+
+# Git aliases and functions
+zmodule git
+
+# SSH agent management
+zmodule ssh
+
+# Homebrew aliases and completions
+zmodule homebrew
+
+# Python virtual environment
+zmodule python
+
+# Tmux auto-start
+zmodule pacify
+
+# Command-not-found handler
+zmodule command-not-found
+
+# Completions (must come before zmodule completion)
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+
+# Prompt
+zmodule eriner
+
+# Plugins (must come after completion)
+zmodule zsh-users/zsh-autosuggestions
+zmodule zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-history-substring-search

@@ -1,0 +1,30 @@
+[core]
+	pager        = delta
+	excludesFile = ~/.gitignore_global
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	dark = true
+	line-numbers = true
+
+[merge]
+	conflictstyle = zdiff3
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+
+[init]
+	defaultBranch = main
+
+[alias]
+	st   = status
+	co   = checkout
+	br   = branch
+	lg   = log --oneline --graph --decorate --all
+	undo = reset HEAD~1 --mixed
