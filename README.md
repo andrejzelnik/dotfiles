@@ -74,9 +74,10 @@ chsh -s /bin/zsh
 | Category | Tools |
 |---|---|
 | Shell | zsh, Zim (eriner theme) |
-| Terminal | tmux, bash-completion |
-| Cloud | azure-cli, awscli, kubectl, helm |
-| IaC | terraform, terragrunt |
-| Data | jq, libpq (psql), mssql-tools18 |
+| Terminal | tmux, bash-completion, fzf, zoxide, bat |
+| Cloud | azure-cli, awscli, kubectl, helm, k9s, kubectx, sops |
+| IaC | terraform, vault, terragrunt, tflint, infracost |
+| Data | jq, yq, duckdb, libpq (psql), mssql-tools18 |
+| Development | gh, pre-commit, git-delta |
 | Security | gnupg |
 | Apps | Claude Code |
