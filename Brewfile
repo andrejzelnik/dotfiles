@@ -29,8 +29,8 @@ brew "jq"
 brew "yq"
 brew "duckdb"
 brew "libpq"
-brew "msodbcsql18"
-brew "mssql-tools18"
+brew "microsoft/mssql-release/msodbcsql18"
+brew "microsoft/mssql-release/mssql-tools18"
 
 # Development
 brew "pre-commit"
