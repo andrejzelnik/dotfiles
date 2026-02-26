@@ -52,6 +52,7 @@ ln -sf "$DOTFILES_DIR/.gitconfig"        ~/.gitconfig
 ln -sf "$DOTFILES_DIR/.gitignore_global" ~/.gitignore_global
 ln -sf "$DOTFILES_DIR/.tmux.conf"        ~/.tmux.conf
 ln -sf "$DOTFILES_DIR/macos.sh"          ~/macos.sh
+touch ~/.gitconfig.local   # must exist before any git command reads .gitconfig
 
 # SSH config — only link if no existing config
 if [[ ! -f ~/.ssh/config ]]; then
