@@ -86,12 +86,11 @@ if [[ ! -d ~/.tmux/plugins/tpm ]]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
-# Git identity
+# Git identity (stored in ~/.gitconfig.local, not tracked by dotfiles)
 if [[ -z $(git config --global user.name) ]]; then
-  print -n "Git name:  "; read git_name
-  print -n "Git email: "; read git_email
-  git config --global user.name  "$git_name"
-  git config --global user.email "$git_email"
+  print -n "Git name:  "; read git_name < /dev/tty
+  print -n "Git email: "; read git_email < /dev/tty
+  print "[user]\n\tname  = $git_name\n\temail = $git_email" >> ~/.gitconfig.local
 fi
 
 # Set zsh as default shell
