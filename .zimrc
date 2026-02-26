@@ -20,6 +20,7 @@ zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
 
 # Prompt
+zmodule prompt-pwd
 zmodule eriner
 
 # Plugins (must come after completion)
