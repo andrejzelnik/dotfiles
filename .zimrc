@@ -1,3 +1,5 @@
+zstyle ':zim:zmodule' use 'degit'
+
 # Core Zim modules
 zmodule environment
 zmodule input
