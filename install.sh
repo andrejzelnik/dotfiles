@@ -63,7 +63,7 @@ success "Dotfiles linked"
 
 # ── 5. Tools via Brewfile ─────────────────────────────────────────────────────
 info "Installing tools via Brewfile..."
-brew bundle --file="$DOTFILES_DIR/Brewfile"
+HOMEBREW_ACCEPT_EULA=Y brew bundle --file="$DOTFILES_DIR/Brewfile"
 success "Tools installed"
 
 # ── 6. Zim modules ────────────────────────────────────────────────────────────
