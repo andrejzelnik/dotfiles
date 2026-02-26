@@ -68,6 +68,7 @@ success "Tools installed"
 
 # ── 6. Zim modules ────────────────────────────────────────────────────────────
 info "Installing Zim modules..."
+export ZIM_HOME="${ZIM_HOME:-$HOME/.zim}"
 source ~/.zshrc 2>/dev/null || true
 zimfw install
 success "Zim modules installed"
