@@ -1,3 +1,5 @@
+zstyle ':zim:zmodule' use 'degit'
+
 # Core Zim modules
 zmodule environment
 zmodule input
@@ -12,15 +14,6 @@ zmodule ssh
 
 # Homebrew aliases and completions
 zmodule homebrew
-
-# Python virtual environment
-zmodule python
-
-# Tmux auto-start
-zmodule pacify
-
-# Command-not-found handler
-zmodule command-not-found
 
 # Completions (must come before zmodule completion)
 zmodule zsh-users/zsh-completions --fpath src
