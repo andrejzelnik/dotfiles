@@ -88,10 +88,10 @@ if [[ ! -d ~/.tmux/plugins/tpm ]]; then
 fi
 
 # Git identity (stored in ~/.gitconfig.local, not tracked by dotfiles)
-if [[ -z $(git config --global user.name) ]]; then
+if [[ -z $(git config user.name) ]]; then
   print -n "Git name:  "; read git_name < /dev/tty
   print -n "Git email: "; read git_email < /dev/tty
-  print "[user]\n\tname  = $git_name\n\temail = $git_email" >> ~/.gitconfig.local
+  print "[user]\n\tname = $git_name\n\temail = $git_email" >> ~/.gitconfig.local
 fi
 
 # Set zsh as default shell
