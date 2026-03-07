@@ -11,7 +11,8 @@ cweijan.vscode-database-client2
 # Languages & Formatting
 redhat.vscode-yaml
 ms-python.python
-ms-python.black-formatter
+ms-python.vscode-pylance
+charliermarsh.ruff
 tamasfe.even-better-toml
 golang.go
 
@@ -29,11 +30,13 @@ pkief.material-icon-theme
 
 # Remote
 ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-ssh-edit
+ms-vscode-remote.remote-containers
 
 # Utilities
 esbenp.prettier-vscode
 streetsidesoftware.code-spell-checker
 usernamehw.errorlens
 editorconfig.editorconfig
-christian-kohler.path-intellisense
-yzhang.markdown-all-in-one
+ms-vscode.makefile-tools
+github.remotehub
