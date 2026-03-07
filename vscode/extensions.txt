@@ -1,0 +1,22 @@
+# Infrastructure & Cloud
+hashicorp.terraform
+ms-vscode.azurecli
+amazonwebservices.aws-toolkit-vscode
+ms-kubernetes-tools.vscode-kubernetes-tools
+ms-azuretools.vscode-docker
+
+# Data
+cweijan.vscode-database-client2
+
+# Languages & Formatting
+redhat.vscode-yaml
+ms-python.python
+ms-python.black-formatter
+tamasfe.even-better-toml
+
+# Git
+eamodio.gitlens
+
+# Utilities
+esbenp.prettier-vscode
+streetsidesoftware.code-spell-checker

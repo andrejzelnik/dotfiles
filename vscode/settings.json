@@ -1,0 +1,66 @@
+{
+  // Editor
+  "editor.fontFamily": "'JetBrains Mono', 'Menlo', monospace",
+  "editor.fontSize": 13,
+  "editor.lineHeight": 1.6,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.rulers": [100],
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.suggestSelection": "first",
+
+  // Files
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.associations": {
+    "*.tfvars": "terraform",
+    "*.hcl": "terraform"
+  },
+
+  // Terminal
+  "terminal.integrated.fontFamily": "'JetBrains Mono', 'Menlo', monospace",
+  "terminal.integrated.fontSize": 13,
+
+  // Git
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  // Workbench
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreview": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // Extensions: Terraform
+  "terraform.experimentalFeatures.validateOnSave": true,
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+
+  // Extensions: YAML
+  "yaml.validate": true,
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": ".github/workflows/*.yml",
+    "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": "docker-compose*.yml"
+  },
+
+  // Extensions: Python (via mise)
+  "python.defaultInterpreterPath": "${env:HOME}/.local/share/mise/shims/python",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+
+  // Extensions: GitLens
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line"
+}
