@@ -13,10 +13,16 @@ redhat.vscode-yaml
 ms-python.python
 ms-python.black-formatter
 tamasfe.even-better-toml
+golang.go
+
+# AI
+anthropic.claude-code
+github.copilot-chat
 
 # Git
 eamodio.gitlens
 github.vscode-pull-request-and-issues
+github.vscode-github-actions
 
 # Theme
 pkief.material-icon-theme
