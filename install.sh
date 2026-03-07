@@ -91,7 +91,7 @@ fi
 if [[ -z $(git config --global user.name) ]]; then
   print -n "Git name:  "; read git_name < /dev/tty
   print -n "Git email: "; read git_email < /dev/tty
-  print "[user]\n\tname  = $git_name\n\temail = $git_email" >> ~/.gitconfig.local
+  print "[user]\n\tname = $git_name\n\temail = $git_email" >> ~/.gitconfig.local
 fi
 
 # Set zsh as default shell
