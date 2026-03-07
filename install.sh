@@ -77,11 +77,6 @@ success "Zim modules installed"
 # ── 7. Post-install ───────────────────────────────────────────────────────────
 info "Running post-install steps..."
 
-# Terraform shell completion (idempotent)
-if command -v terraform &>/dev/null; then
-  terraform -install-autocomplete 2>/dev/null || true
-fi
-
 # TPM (tmux plugin manager)
 if [[ ! -d ~/.tmux/plugins/tpm ]]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
