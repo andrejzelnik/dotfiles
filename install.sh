@@ -80,6 +80,7 @@ if command -v code &>/dev/null; then
   VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
   mkdir -p "$VSCODE_USER_DIR"
   ln -sf "$DOTFILES_DIR/vscode/settings.json" "$VSCODE_USER_DIR/settings.json"
+  ln -sf "$DOTFILES_DIR/vscode/keybindings.json" "$VSCODE_USER_DIR/keybindings.json"
 
   grep -v '^#' "$DOTFILES_DIR/vscode/extensions.txt" | grep -v '^$' | while read ext; do
     code --install-extension "$ext" --force 2>/dev/null || true

@@ -16,10 +16,18 @@ tamasfe.even-better-toml
 
 # Git
 eamodio.gitlens
+github.vscode-pull-request-and-issues
 
 # Theme
 pkief.material-icon-theme
 
+# Remote
+ms-vscode-remote.remote-ssh
+
 # Utilities
 esbenp.prettier-vscode
 streetsidesoftware.code-spell-checker
+usernamehw.errorlens
+editorconfig.editorconfig
+christian-kohler.path-intellisense
+yzhang.markdown-all-in-one

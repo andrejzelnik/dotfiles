@@ -10,13 +10,35 @@
   "editor.renderWhitespace": "boundary",
   "editor.bracketPairColorization.enabled": true,
   "editor.suggestSelection": "first",
+  "editor.stickyScroll.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
 
   // Files
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/*.pyc": true
+  },
   "files.associations": {
     "*.tfvars": "terraform",
     "*.hcl": "terraform"
+  },
+
+  // Search
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.terraform": true,
+    "**/.venv": true,
+    "**/dist": true,
+    "**/.git": true
   },
 
   // Terminal
@@ -64,5 +86,11 @@
 
   // Extensions: GitLens
   "gitlens.currentLine.enabled": false,
-  "gitlens.hovers.currentLine.over": "line"
+  "gitlens.hovers.currentLine.over": "line",
+
+  // Markdown
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "files.trimTrailingWhitespace": false
+  }
 }
