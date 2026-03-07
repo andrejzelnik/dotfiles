@@ -17,6 +17,9 @@ tamasfe.even-better-toml
 # Git
 eamodio.gitlens
 
+# Theme
+pkief.material-icon-theme
+
 # Utilities
 esbenp.prettier-vscode
 streetsidesoftware.code-spell-checker

@@ -30,6 +30,8 @@
   "diffEditor.ignoreTrimWhitespace": false,
 
   // Workbench
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
   "explorer.confirmDelete": false,
