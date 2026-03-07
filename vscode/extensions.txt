@@ -1,0 +1,39 @@
+# Infrastructure & Cloud
+hashicorp.terraform
+ms-vscode.azurecli
+amazonwebservices.aws-toolkit-vscode
+ms-kubernetes-tools.vscode-kubernetes-tools
+ms-azuretools.vscode-docker
+
+# Data
+cweijan.vscode-database-client2
+
+# Languages & Formatting
+redhat.vscode-yaml
+ms-python.python
+ms-python.black-formatter
+tamasfe.even-better-toml
+golang.go
+
+# AI
+anthropic.claude-code
+github.copilot-chat
+
+# Git
+eamodio.gitlens
+github.vscode-pull-request-and-issues
+github.vscode-github-actions
+
+# Theme
+pkief.material-icon-theme
+
+# Remote
+ms-vscode-remote.remote-ssh
+
+# Utilities
+esbenp.prettier-vscode
+streetsidesoftware.code-spell-checker
+usernamehw.errorlens
+editorconfig.editorconfig
+christian-kohler.path-intellisense
+yzhang.markdown-all-in-one

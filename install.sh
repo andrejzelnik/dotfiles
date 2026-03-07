@@ -74,7 +74,23 @@ source ~/.zshrc 2>/dev/null || true
 zimfw install
 success "Zim modules installed"
 
-# ── 7. Post-install ───────────────────────────────────────────────────────────
+# ── 7. VS Code ────────────────────────────────────────────────────────────────
+info "Configuring VS Code..."
+if command -v code &>/dev/null; then
+  VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
+  mkdir -p "$VSCODE_USER_DIR"
+  ln -sf "$DOTFILES_DIR/vscode/settings.json" "$VSCODE_USER_DIR/settings.json"
+  ln -sf "$DOTFILES_DIR/vscode/keybindings.json" "$VSCODE_USER_DIR/keybindings.json"
+
+  grep -v '^#' "$DOTFILES_DIR/vscode/extensions.txt" | grep -v '^$' | while read ext; do
+    code --install-extension "$ext" --force 2>/dev/null || true
+  done
+  success "VS Code configured"
+else
+  success "VS Code not found, skipping (install and rerun to configure)"
+fi
+
+# ── 8. Post-install ───────────────────────────────────────────────────────────
 info "Running post-install steps..."
 
 # TPM (tmux plugin manager)
