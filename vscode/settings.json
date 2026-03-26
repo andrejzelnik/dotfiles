@@ -67,6 +67,7 @@
   "explorer.confirmDragAndDrop": false,
   "security.workspace.trust.enabled": false,
   "telemetry.telemetryLevel": "off",
+  "aws.telemetry": false,
   "extensions.autoUpdate": false,
 
   // Extensions: Terraform
@@ -99,7 +100,7 @@
   },
 
   // Extensions: Python (via mise)
-  "python.defaultInterpreterPath": "${env:HOME}/.local/share/mise/shims/python",
+  "python.defaultInterpreterPath": "python3",
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.codeActionsOnSave": {
