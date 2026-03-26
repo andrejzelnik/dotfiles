@@ -40,6 +40,11 @@ export GPG_TTY=$(tty)
 
 # fzf
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --info=inline'
+# use fd for fzf file search (respects .gitignore, faster than find)
+if command -v fd &>/dev/null; then
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
 eval "$(fzf --zsh)"
 
 # zoxide (smarter cd)
