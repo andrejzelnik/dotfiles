@@ -3,7 +3,9 @@
 
 # Dock
 defaults write com.apple.dock autohide          -bool true
-defaults write com.apple.dock tilesize          -int 48
+defaults write com.apple.dock tilesize          -int 24
+defaults write com.apple.dock magnification     -bool true
+defaults write com.apple.dock largesize         -int 32
 defaults write com.apple.dock show-recents      -bool false
 defaults write com.apple.dock mru-spaces        -bool false
 
@@ -20,6 +22,9 @@ defaults write NSGlobalDomain InitialKeyRepeat                       -int 15
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled   -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled    -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled     -bool false
+
+# Terminal.app — keep Option as Option (not Meta) so Option+number works for Czech layout
+defaults write com.apple.Terminal useOptionAsMetaKey -bool false
 
 # Screenshots — save as PNG without shadow
 defaults write com.apple.screencapture type            -string "png"
