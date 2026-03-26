@@ -23,9 +23,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled   -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled    -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled     -bool false
 
-# Terminal.app — keep Option as Option (not Meta) so Option+number works for Czech layout
-defaults write com.apple.Terminal useOptionAsMetaKey -bool false
-
 # Screenshots — save as PNG without shadow
 defaults write com.apple.screencapture type            -string "png"
 defaults write com.apple.screencapture disable-shadow  -bool true
