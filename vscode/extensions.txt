@@ -18,6 +18,7 @@ golang.go
 
 # AI
 anthropic.claude-code
+github.copilot
 github.copilot-chat
 
 # Git

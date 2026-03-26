@@ -1,4 +1,5 @@
 tap "hashicorp/tap"
+tap "homebrew/cask-fonts"
 tap "microsoft/mssql-release", "https://github.com/Microsoft/homebrew-mssql-release"
 
 # Terminal
@@ -37,6 +38,9 @@ brew "pre-commit"
 brew "git-delta"
 brew "mise"
 brew "typst"
+
+# Fonts
+cask "font-jetbrains-mono"
 
 # Apps
 cask "claude-code"
