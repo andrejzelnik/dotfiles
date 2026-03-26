@@ -8,7 +8,7 @@ install: ## Full setup from scratch
 update: ## Pull latest changes and reinstall
 	@git -C $(DOTFILES_DIR) pull
 	@HOMEBREW_ACCEPT_EULA=Y brew bundle --file=$(DOTFILES_DIR)/Brewfile
-	@source ~/.zshrc 2>/dev/null; zimfw install || true
+	@zsh -c 'source ~/.zshrc 2>/dev/null && zimfw install' || true
 	@echo "Updated."
 
 link: ## Re-link dotfiles only
