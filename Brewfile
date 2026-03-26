@@ -38,6 +38,8 @@ brew "pre-commit"
 brew "git-delta"
 brew "mise"
 brew "typst"
+brew "shellcheck"
+brew "starship"
 
 # Fonts
 cask "font-jetbrains-mono"

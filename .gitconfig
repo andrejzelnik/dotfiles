@@ -28,6 +28,9 @@
 	br   = branch
 	lg   = log --oneline --graph --decorate --all
 	undo = reset HEAD~1 --mixed
+	pr   = !gh pr create
+	browse = !gh browse
+	prs  = !gh pr list
 
 [include]
 	path = ~/.gitconfig.local
