@@ -1,5 +1,4 @@
 tap "hashicorp/tap"
-tap "homebrew/cask-fonts"
 tap "microsoft/mssql-release", "https://github.com/Microsoft/homebrew-mssql-release"
 
 # Terminal
