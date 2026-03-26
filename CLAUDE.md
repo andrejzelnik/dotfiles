@@ -1,35 +1,23 @@
+---
+model: claude-sonnet-4-6
+---
+
 # Dotfiles
 
-macOS (Apple Silicon) dotfiles repo. All configs live here and are symlinked to `$HOME` via `install.sh`.
+macOS (Apple Silicon) dotfiles symlinked to `$HOME` via `install.sh`.
 
 ## Structure
 
-```
-.zimrc              → ~/.zimrc              # Zim zsh framework modules
-.zshrc              → ~/.zshrc              # Shell config, aliases, completions
-.gitconfig          → ~/.gitconfig          # Git config (identity in ~/.gitconfig.local)
-.gitignore_global   → ~/.gitignore_global   # Global gitignore
-.tmux.conf          → ~/.tmux.conf          # Tmux config
-.ssh/config         → ~/.ssh/config         # SSH config (local overrides in ~/.ssh/config.local)
-.mise.toml          → ~/.config/mise/config.toml  # Language version manager
-starship.toml       → ~/.config/starship.toml     # Prompt theme
-vscode/             → VS Code User dir      # Editor settings + extensions list
-macos.sh            # macOS system defaults (run once)
-Brewfile            # All Homebrew packages and casks
-```
+- `.zimrc` `.zshrc` `.gitconfig` `.gitignore_global` `.tmux.conf` `.ssh/config` → `~/` equivalents
+- `.mise.toml` → `~/.config/mise/config.toml`, `starship.toml` → `~/.config/starship.toml`
+- `vscode/` → VS Code User dir, `macos.sh` → system defaults, `Brewfile` → Homebrew packages
 
 ## Conventions
 
-- **Symlinks**: `install.sh` backs up existing files to `~/.dotfiles-backup/` before linking.
-- **Local overrides**: `.gitconfig.local` and `.ssh/config.local` are included but not tracked.
-- **Brewfile categories**: Terminal, Cloud & infrastructure, Data, Development, Fonts, Apps.
-- **Completions**: Cached weekly in `~/.cache/zsh/` to avoid slow shell startup.
-- **Shell scripts**: Must pass `shellcheck`. Pre-commit hook enforces this.
+- `install.sh` backs up to `~/.dotfiles-backup/` before linking
+- `.gitconfig.local` and `.ssh/config.local` for untracked local overrides
+- Shell scripts must pass `shellcheck` (pre-commit hook)
 
-## Common tasks
+## Tasks
 
-- `make install` — full setup from scratch
-- `make update` — pull latest + reinstall brew packages + zim modules
-- `make link` — re-link dotfiles only
-- `make macos` — apply macOS system defaults
-- `make lint` — run shellcheck on all shell scripts
+`make install` | `make update` | `make link` | `make macos` | `make lint`
