@@ -3,6 +3,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
 setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_REDUCE_BLANKS SHARE_HISTORY
+HISTORY_IGNORE="(export AWS_SECRET*|export AWS_ACCESS*|vault login*|export.*TOKEN*|export.*PASSWORD*)"
 
 # Editor
 export EDITOR=vim
@@ -12,6 +13,9 @@ export VISUAL=vim
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+
+# Ensure Homebrew completions are in fpath before compinit
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 
 # start Zim
 source ${ZIM_HOME:-~/.zim}/init.zsh
@@ -41,7 +45,8 @@ eval "$(fzf --zsh)"
 # zoxide (smarter cd)
 eval "$(zoxide init zsh)"
 
-# bat as man pager
+# bat
+export BAT_THEME="Dracula"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # completions (cached, refreshed weekly)
@@ -55,11 +60,35 @@ _load_completion() {
 _load_completion kubectl completion zsh
 _load_completion helm completion zsh
 _load_completion gh completion -s zsh
+# kubectx/kubens completions are in Homebrew's site-functions (auto-loaded)
 
 # mise (language version manager)
 eval "$(mise activate zsh)"
 
-# aliases
+# Starship prompt
+eval "$(starship init zsh)"
+
+# aliases — kubectl
 alias k="kubectl"
+alias kgp="kubectl get pods"
+alias kgs="kubectl get svc"
+alias kgd="kubectl get deployments"
+alias kga="kubectl get all"
+alias kl="kubectl logs -f"
+alias kx="kubectx"
+alias kns="kubens"
+
+# aliases — terraform
 alias tf="terraform"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
+alias tfi="terraform init"
+
+# aliases — docker
+alias d="docker"
+alias dc="docker compose"
+alias dps="docker ps"
+alias dlog="docker logs -f"
+
+# aliases — general
 alias cat="bat --pager=never"

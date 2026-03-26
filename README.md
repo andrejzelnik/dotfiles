@@ -48,7 +48,14 @@ ln -sf ~/.dotfiles/.zshrc            ~/.zshrc
 ln -sf ~/.dotfiles/.gitconfig        ~/.gitconfig
 ln -sf ~/.dotfiles/.gitignore_global ~/.gitignore_global
 ln -sf ~/.dotfiles/.tmux.conf        ~/.tmux.conf
-ln -sf ~/.dotfiles/macos.sh          ~/macos.sh
+
+# Starship prompt config
+mkdir -p ~/.config
+ln -sf ~/.dotfiles/starship.toml ~/.config/starship.toml
+
+# mise language version manager config
+mkdir -p ~/.config/mise
+ln -sf ~/.dotfiles/.mise.toml ~/.config/mise/config.toml
 
 # Required by .gitconfig (stores your name/email, not tracked)
 touch ~/.gitconfig.local
@@ -75,8 +82,7 @@ zimfw install
 ```sh
 VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
 mkdir -p "$VSCODE_USER_DIR"
-ln -sf ~/.dotfiles/vscode/settings.json    "$VSCODE_USER_DIR/settings.json"
-ln -sf ~/.dotfiles/vscode/keybindings.json "$VSCODE_USER_DIR/keybindings.json"
+ln -sf ~/.dotfiles/vscode/settings.json "$VSCODE_USER_DIR/settings.json"
 
 grep -v '^#' ~/.dotfiles/vscode/extensions.txt | grep -v '^$' | while read ext; do
   code --install-extension "$ext" --force
@@ -101,13 +107,25 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ### 9. macOS defaults (optional)
 
 ```sh
-~/macos.sh
+make macos
+# or: zsh ~/.dotfiles/macos.sh
 ```
+
+## Makefile targets
+
+| Target | Description |
+|--------|-------------|
+| `make install` | Full setup from scratch |
+| `make update` | Pull latest + reinstall brew packages + zim modules |
+| `make link` | Re-link dotfiles only |
+| `make macos` | Apply macOS system defaults |
+| `make lint` | Run shellcheck on all shell scripts |
 
 ## Updating
 
 ```sh
 git -C ~/.dotfiles pull
+# or: make update
 ```
 
 Symlinks mean changes take effect immediately — no re-running the install script.
@@ -118,11 +136,11 @@ Symlinks mean changes take effect immediately — no re-running the install scri
 
 | Category | Tools |
 |---|---|
-| Shell | zsh, Zim (eriner theme) |
+| Shell | zsh, Zim, Starship prompt |
 | Terminal | tmux, bash-completion, fzf, zoxide, bat |
 | Cloud | azure-cli, awscli, kubectl, helm, k9s, kubectx, sops |
 | IaC | terraform, vault, terragrunt, tflint, infracost |
 | Data | jq, yq, duckdb, libpq (psql), mssql-tools18 |
-| Development | gh, pre-commit, git-delta, mise, typst |
+| Development | gh, pre-commit, git-delta, mise, typst, shellcheck, starship |
 | Security | gnupg |
 | Apps | VS Code, Claude Code |

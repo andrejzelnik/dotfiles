@@ -19,9 +19,7 @@ zmodule homebrew
 zmodule zsh-users/zsh-completions --fpath src
 zmodule completion
 
-# Prompt
-zmodule prompt-pwd
-zmodule eriner
+# Prompt (handled by Starship — see starship.toml)
 
 # Plugins (must come after completion)
 zmodule zsh-users/zsh-autosuggestions
