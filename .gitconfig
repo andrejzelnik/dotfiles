@@ -10,6 +10,9 @@
 	dark = true
 	line-numbers = true
 
+[diff]
+	algorithm = histogram
+
 [merge]
 	conflictstyle = zdiff3
 

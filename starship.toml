@@ -9,6 +9,10 @@ $terraform\
 $python\
 $golang\
 $nodejs\
+$aws\
+$azure\
+$gcloud\
+$docker_context\
 $cmd_duration\
 $line_break\
 $character"""
@@ -46,6 +50,22 @@ symbol = " "
 [nodejs]
 format = "[$symbol$version]($style) "
 symbol = " "
+
+[aws]
+format = "[$symbol($profile)(/$region)]($style) "
+symbol = "☁️ "
+
+[azure]
+format = "[$symbol($subscription)]($style) "
+symbol = "󰠅 "
+disabled = false
+
+[gcloud]
+format = "[$symbol$project]($style) "
+symbol = "☁️ "
+
+[docker_context]
+format = "[$symbol$context]($style) "
 
 [cmd_duration]
 min_time = 2_000
