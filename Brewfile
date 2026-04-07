@@ -25,6 +25,9 @@ brew "kubectx"
 brew "sops"
 brew "tflint"
 brew "infracost"
+brew "direnv"
+brew "trivy"
+brew "checkov"
 
 # Data
 brew "jq"
