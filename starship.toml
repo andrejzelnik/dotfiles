@@ -10,6 +10,8 @@ $python\
 $golang\
 $nodejs\
 $aws\
+$azure\
+$gcloud\
 $docker_context\
 $cmd_duration\
 $line_break\
@@ -51,6 +53,15 @@ symbol = " "
 
 [aws]
 format = "[$symbol($profile)(/$region)]($style) "
+symbol = "☁️ "
+
+[azure]
+format = "[$symbol($subscription)]($style) "
+symbol = "󰠅 "
+disabled = false
+
+[gcloud]
+format = "[$symbol$project]($style) "
 symbol = "☁️ "
 
 [docker_context]
