@@ -11,6 +11,7 @@ brew "ripgrep"
 brew "zoxide"
 brew "bat"
 brew "gh"
+brew "lazygit"
 
 # Cloud & infrastructure
 brew "azure-cli"
@@ -38,6 +39,7 @@ brew "microsoft/mssql-release/msodbcsql18"
 brew "microsoft/mssql-release/mssql-tools18"
 
 # Development
+brew "uv"
 brew "pre-commit"
 brew "git-delta"
 brew "mise"

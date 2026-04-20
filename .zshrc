@@ -70,6 +70,11 @@ _load_completion gh completion -s zsh
 # mise (language version manager)
 eval "$(mise activate zsh)"
 
+# direnv (per-directory environment variables)
+if command -v direnv &>/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
 # Starship prompt
 eval "$(starship init zsh)"
 
@@ -97,3 +102,4 @@ alias dlog="docker logs -f"
 
 # aliases — general
 alias cat="bat --pager=never"
+alias lg="lazygit"
