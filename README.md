@@ -137,10 +137,10 @@ Symlinks mean changes take effect immediately — no re-running the install scri
 | Category | Tools |
 |---|---|
 | Shell | zsh, Zim, Starship prompt |
-| Terminal | tmux, bash-completion, fzf, zoxide, bat |
+| Terminal | tmux, bash-completion, fzf, fd, ripgrep, zoxide, bat, lazygit |
 | Cloud | azure-cli, awscli, kubectl, helm, k9s, kubectx, sops |
 | IaC | terraform, vault, terragrunt, tflint, infracost |
 | Data | jq, yq, duckdb, libpq (psql), mssql-tools18 |
-| Development | gh, pre-commit, git-delta, mise, typst, shellcheck, starship |
-| Security | gnupg |
+| Development | gh, pre-commit, git-delta, mise, uv, direnv, typst, shellcheck, starship |
+| Security | gnupg, trivy, checkov |
 | Apps | VS Code, Claude Code |

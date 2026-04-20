@@ -6,9 +6,12 @@ brew "bash-completion"
 brew "tmux"
 brew "gnupg"
 brew "fzf"
+brew "fd"
+brew "ripgrep"
 brew "zoxide"
 brew "bat"
 brew "gh"
+brew "lazygit"
 
 # Cloud & infrastructure
 brew "azure-cli"
@@ -23,6 +26,9 @@ brew "kubectx"
 brew "sops"
 brew "tflint"
 brew "infracost"
+brew "direnv"
+brew "trivy"
+brew "checkov"
 
 # Data
 brew "jq"
@@ -33,6 +39,7 @@ brew "microsoft/mssql-release/msodbcsql18"
 brew "microsoft/mssql-release/mssql-tools18"
 
 # Development
+brew "uv"
 brew "pre-commit"
 brew "git-delta"
 brew "mise"
