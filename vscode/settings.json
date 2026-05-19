@@ -101,7 +101,7 @@
   },
 
   // Extensions: Python (via mise)
-  "python.defaultInterpreterPath": "~/.local/share/mise/shims/python",
+  "python.defaultInterpreterPath": "/Users/andrej/.local/share/mise/shims/python",
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.codeActionsOnSave": {
