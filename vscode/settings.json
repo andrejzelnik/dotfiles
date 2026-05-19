@@ -100,8 +100,8 @@
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
 
-  // Extensions: Python (via mise)
-  "python.defaultInterpreterPath": "/Users/andrej/.local/share/mise/shims/python",
+  // Extensions: Python
+  "python.defaultInterpreterPath": "python3",
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.codeActionsOnSave": {
