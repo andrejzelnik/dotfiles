@@ -5,7 +5,7 @@ Customized dotfiles and base tools for macOS (Apple Silicon).
 ## Quick start
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/andrejzelnik/dotfiles/master/install.sh | zsh
+curl -fsSL https://raw.githubusercontent.com/andrejzelnik/dotfiles/main/install.sh | zsh
 ```
 
 Or follow the manual steps below.
