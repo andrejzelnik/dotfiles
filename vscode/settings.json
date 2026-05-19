@@ -1,7 +1,8 @@
 {
   // Editor
-  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "JetBrains Mono, Menlo, Monaco, monospace",
   "editor.fontSize": 13,
+  "editor.fontLigatures": true,
   "editor.lineHeight": 1.6,
   "editor.tabSize": 4,
   "editor.wordWrap": "off",
@@ -57,7 +58,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
 
   // Workbench
-  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorTheme": "Dark Modern",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
   "workbench.editor.enablePreview": false,
@@ -100,7 +101,7 @@
   },
 
   // Extensions: Python (via mise)
-  "python.defaultInterpreterPath": "python3",
+  "python.defaultInterpreterPath": "~/.local/share/mise/shims/python",
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.codeActionsOnSave": {
