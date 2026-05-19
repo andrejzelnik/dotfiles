@@ -16,11 +16,25 @@
 [merge]
 	conflictstyle = zdiff3
 
+[fetch]
+	prune = true
+	pruneTags = true
+
 [pull]
 	rebase = true
 
 [push]
 	autoSetupRemote = true
+
+[rebase]
+	autosquash = true
+	autostash = true
+
+[rerere]
+	enabled = true
+
+[column]
+	ui = auto
 
 [init]
 	defaultBranch = main

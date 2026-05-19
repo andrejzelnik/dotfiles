@@ -2,8 +2,8 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
-setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_REDUCE_BLANKS SHARE_HISTORY
-HISTORY_IGNORE="(export AWS_SECRET*|export AWS_ACCESS*|vault login*|export.*TOKEN*|export.*PASSWORD*)"
+setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_REDUCE_BLANKS SHARE_HISTORY EXTENDED_HISTORY
+HISTORY_IGNORE="(export AWS_SECRET*|export AWS_ACCESS*|export AZURE*|export GCP*|export SOPS*|export GH_TOKEN*|vault login*|export.*TOKEN*|export.*PASSWORD*|export.*KEY*)"
 
 # Editor
 export EDITOR=vim
@@ -54,6 +54,19 @@ eval "$(zoxide init zsh)"
 export BAT_THEME="Dracula"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+# eza (modern ls replacement)
+if command -v eza &>/dev/null; then
+  alias ls="eza --icons --group-directories-first"
+  alias ll="eza --icons --group-directories-first -l --git"
+  alias la="eza --icons --group-directories-first -la --git"
+  alias lt="eza --icons --tree --level=2"
+fi
+
+# atuin (enhanced shell history)
+if command -v atuin &>/dev/null; then
+  eval "$(atuin init zsh --disable-up-arrow)"
+fi
+
 # completions (cached, refreshed weekly)
 _load_completion() {
   local cache=~/.cache/zsh/${1}_completion.zsh
@@ -99,7 +112,10 @@ alias d="docker"
 alias dc="docker compose"
 alias dps="docker ps"
 alias dlog="docker logs -f"
+alias lzd="lazydocker"
 
 # aliases — general
 alias cat="bat --pager=never"
 alias lg="lazygit"
+alias htop="btm"
+alias du="dust"

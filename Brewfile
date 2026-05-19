@@ -10,8 +10,13 @@ brew "fd"
 brew "ripgrep"
 brew "zoxide"
 brew "bat"
+brew "eza"
 brew "gh"
 brew "lazygit"
+brew "lazydocker"
+brew "bottom"
+brew "dust"
+brew "atuin"
 
 # Cloud & infrastructure
 brew "azure-cli"
@@ -29,6 +34,7 @@ brew "infracost"
 brew "direnv"
 brew "trivy"
 brew "checkov"
+brew "gitleaks"
 
 # Data
 brew "jq"
