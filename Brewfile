@@ -19,7 +19,6 @@ brew "dust"
 brew "atuin"
 
 # Cloud & infrastructure
-brew "azure-cli"
 brew "awscli"
 brew "helm"
 brew "kubectl"
@@ -29,7 +28,6 @@ brew "terragrunt"
 brew "k9s"
 brew "kubectx"
 brew "sops"
-brew "tflint"
 brew "infracost"
 brew "direnv"
 brew "trivy"
@@ -57,5 +55,6 @@ brew "starship"
 cask "font-jetbrains-mono"
 
 # Apps
+cask "azure-cli"
 cask "claude-code"
 cask "visual-studio-code"
