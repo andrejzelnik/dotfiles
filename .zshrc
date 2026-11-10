@@ -20,15 +20,9 @@ fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 # start Zim
 source ${ZIM_HOME:-~/.zim}/init.zsh
 
-# enable bash-style completions (terraform, azure-cli)
+# enable bash-style completions (terraform); az ships a native _az in site-functions
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C "$(brew --prefix)/bin/terraform" terraform
-_az_cache=~/.cache/zsh/az_completion.zsh
-if [[ ! -f $_az_cache ]] || [[ -n $(find $_az_cache -mtime +7 2>/dev/null) ]]; then
-  mkdir -p ~/.cache/zsh && cat $(brew --prefix)/etc/bash_completion.d/az > $_az_cache
-fi
-source $_az_cache
-unset _az_cache
 
 # libpq is keg-only, put it in PATH
 export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
@@ -37,6 +31,9 @@ export PATH="$(brew --prefix)/opt/libpq/bin:$PATH"
 complete -C "$(brew --prefix)/bin/aws_completer" aws
 
 export GPG_TTY=$(tty)
+
+# macOS /etc/ssl/cert.pem still trusts distrusted roots; use Homebrew's curated bundle
+[[ -f "$(brew --prefix)/etc/ca-certificates/cert.pem" ]] && export SSL_CERT_FILE="$(brew --prefix)/etc/ca-certificates/cert.pem"
 
 # fzf
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --info=inline'
@@ -71,7 +68,7 @@ fi
 _load_completion() {
   local cache=~/.cache/zsh/${1}_completion.zsh
   if [[ ! -f $cache ]] || [[ -n $(find $cache -mtime +7 2>/dev/null) ]]; then
-    mkdir -p ~/.cache/zsh && "${@}" > $cache
+    mkdir -p ~/.cache/zsh && "${@}" >| $cache
   fi
   source $cache
 }
