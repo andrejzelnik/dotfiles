@@ -53,6 +53,7 @@ brew "starship"
 
 # Fonts
 cask "font-jetbrains-mono"
+cask "font-jetbrains-mono-nerd-font"
 
 # Apps
 cask "azure-cli"

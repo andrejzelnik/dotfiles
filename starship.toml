@@ -41,15 +41,15 @@ format = "[$symbol$workspace]($style) "
 
 [python]
 format = "[${symbol}${version}]($style) "
-symbol = " "
+symbol = " "
 
 [golang]
 format = "[$symbol$version]($style) "
-symbol = " "
+symbol = " "
 
 [nodejs]
 format = "[$symbol$version]($style) "
-symbol = " "
+symbol = " "
 
 [aws]
 format = "[$symbol($profile)(/$region)]($style) "

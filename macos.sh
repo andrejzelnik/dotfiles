@@ -27,6 +27,9 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled     -bool false
 defaults write com.apple.screencapture type            -string "png"
 defaults write com.apple.screencapture disable-shadow  -bool true
 
+# Terminal — Nerd Font so starship prompt icons render (installed via Brewfile)
+osascript -e 'tell application "Terminal" to set font name of default settings to "JetBrainsMonoNFM-Regular"' 2>/dev/null || true
+
 # Apply
 killall Dock    2>/dev/null || true
 killall Finder  2>/dev/null || true
