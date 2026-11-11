@@ -9,8 +9,7 @@ zmodule utility
 # Git aliases and functions
 zmodule git
 
-# SSH agent management
-zmodule ssh
+# SSH agent: handled by macOS launchd + Keychain (AddKeysToAgent/UseKeychain in .ssh/config)
 
 # Homebrew aliases and completions
 zmodule homebrew

@@ -1,6 +1,6 @@
-Update the dotfiles repo: pull latest changes, reinstall brew packages, and verify everything works.
+Update the dotfiles repo: pull latest changes, sync brew packages, mise tools and zim modules, and verify everything works.
 
-1. Run `git -C ~/.dotfiles pull` to get latest changes
-2. Run `HOMEBREW_ACCEPT_EULA=Y brew bundle --file=~/.dotfiles/Brewfile` to install any new packages
-3. Run `make lint` to verify shell scripts pass shellcheck
+1. Run `make -C ~/.dotfiles update` (git pull, `brew bundle`, `mise install`, `zimfw install`)
+2. Run `make -C ~/.dotfiles lint` to verify shell scripts pass shellcheck
+3. Run `brew outdated` and `mise outdated` and list anything still behind
 4. Report what changed and any errors encountered

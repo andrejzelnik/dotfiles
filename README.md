@@ -116,8 +116,8 @@ make macos
 | Target | Description |
 |--------|-------------|
 | `make install` | Full setup from scratch |
-| `make update` | Pull latest + reinstall brew packages + zim modules |
-| `make link` | Re-link dotfiles only |
+| `make update` | Pull latest + sync brew packages, mise tools and zim modules |
+| `make link` | Re-link dotfiles only (runs `link.sh`) |
 | `make macos` | Apply macOS system defaults |
 | `make lint` | Run shellcheck on all shell scripts |
 
@@ -139,8 +139,10 @@ Symlinks mean changes take effect immediately — no re-running the install scri
 | Shell | zsh, Zim, Starship prompt |
 | Terminal | tmux, bash-completion, fzf, fd, ripgrep, zoxide, bat, lazygit |
 | Cloud | azure-cli, awscli, kubectl, helm, k9s, kubectx, sops |
-| IaC | terraform, vault, terragrunt, tflint, infracost |
+| IaC | terraform, vault, terragrunt, tflint (via mise), infracost |
 | Data | jq, yq, duckdb, libpq (psql), mssql-tools18 |
 | Development | gh, pre-commit, git-delta, mise, uv, direnv, typst, shellcheck, starship |
-| Security | gnupg, trivy, checkov |
+| Languages (mise) | python, node, go — versions pinned in `.mise.toml` |
+| Security | gnupg, trivy, checkov, gitleaks |
+| Fonts | JetBrains Mono, JetBrainsMono Nerd Font (for starship prompt icons) |
 | Apps | VS Code, Claude Code |
