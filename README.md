@@ -145,4 +145,4 @@ Symlinks mean changes take effect immediately — no re-running the install scri
 | Languages (mise) | python, node, go — versions pinned in `.mise.toml` |
 | Security | gnupg, trivy, checkov, gitleaks |
 | Fonts | JetBrains Mono, JetBrainsMono Nerd Font (for starship prompt icons) |
-| Apps | VS Code, Claude Code |
+| Apps | VS Code, Claude Code, Fliqlo (flip clock screen saver) |

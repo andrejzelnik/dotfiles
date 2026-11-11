@@ -59,3 +59,6 @@ cask "font-jetbrains-mono-nerd-font"
 cask "azure-cli"
 cask "claude-code"
 cask "visual-studio-code"
+
+# Screen saver
+cask "fliqlo"
