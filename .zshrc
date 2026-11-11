@@ -18,8 +18,9 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 # Ensure Homebrew completions are in fpath before compinit
 fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 
-# start Zim
-source ${ZIM_HOME:-~/.zim}/init.zsh
+# start Zim (zimfw commands require ZIM_HOME to be exported)
+export ZIM_HOME=${ZIM_HOME:-$HOME/.zim}
+source ${ZIM_HOME}/init.zsh
 
 # enable bash-style completions (terraform); az ships a native _az in site-functions
 autoload -U +X bashcompinit && bashcompinit
