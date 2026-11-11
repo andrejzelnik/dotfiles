@@ -68,7 +68,8 @@ success "Zim modules installed"
 info "Configuring VS Code..."
 if command -v code &>/dev/null; then
   grep -v '^#' "$DOTFILES_DIR/vscode/extensions.txt" | grep -v '^$' | while read -r ext; do
-    code --install-extension "$ext" --force 2>/dev/null || true
+    code --install-extension "$ext" --force >/dev/null 2>&1 \
+      || print -P "%F{yellow}!%f Failed to install VS Code extension: $ext"
   done
   success "VS Code configured"
 else
