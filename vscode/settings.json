@@ -66,7 +66,6 @@
   "workbench.list.smoothScrolling": true,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "security.workspace.trust.enabled": false,
   "telemetry.telemetryLevel": "off",
   "aws.telemetry": false,
   "extensions.autoUpdate": false,

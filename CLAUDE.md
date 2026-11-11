@@ -14,7 +14,7 @@ macOS (Apple Silicon) dotfiles symlinked to `$HOME` via `install.sh`.
 
 ## Conventions
 
-- `install.sh` backs up to `~/.dotfiles-backup/` before linking
+- `link.sh` (called by `install.sh` and `make link`) backs up to `~/.dotfiles-backup/` before linking
 - `.gitconfig.local` and `.ssh/config.local` for untracked local overrides
 - Shell scripts must pass `shellcheck` (pre-commit hook)
 
