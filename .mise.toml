@@ -1,5 +1,5 @@
 [tools]
-python = "3.14"
+python = "3.15"
 node = "26"
 go = "1.27"
 "aqua:terraform-linters/tflint" = "latest"
