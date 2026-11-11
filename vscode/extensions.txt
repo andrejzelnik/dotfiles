@@ -18,12 +18,10 @@ golang.go
 
 # AI
 anthropic.claude-code
-github.copilot
-github.copilot-chat
 
 # Git
 eamodio.gitlens
-github.vscode-pull-request-and-issues
+github.vscode-pull-request-github
 github.vscode-github-actions
 
 # Theme
