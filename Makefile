@@ -10,7 +10,8 @@ update: ## Pull latest, then sync brew packages, mise tools and zim modules
 	@git -C $(DOTFILES_DIR) pull
 	@HOMEBREW_ACCEPT_EULA=Y brew bundle --file=$(DOTFILES_DIR)/Brewfile
 	@mise install
-	@zsh -c 'source ~/.zshrc 2>/dev/null && zimfw install' || true
+	@zsh -c 'source ~/.zshrc 2>/dev/null && zimfw install && zimfw update && zimfw upgrade' \
+		|| echo "warning: zim update failed; run 'zimfw install && zimfw update && zimfw upgrade' manually" >&2
 	@echo "Updated."
 
 link: ## Re-link dotfiles only
