@@ -3,7 +3,8 @@ HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
 setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_REDUCE_BLANKS SHARE_HISTORY EXTENDED_HISTORY
-HISTORY_IGNORE="(export AWS_SECRET*|export AWS_ACCESS*|export AZURE*|export GCP*|export SOPS*|export GH_TOKEN*|vault login*|export.*TOKEN*|export.*PASSWORD*|export.*KEY*)"
+# zsh glob patterns, not regexes; keep in sync with history_filter in atuin/config.toml
+HISTORY_IGNORE="(*(TOKEN|PASSWORD|PASSWD|SECRET|KEY)*=*|vault login*|export AZURE*|export GCP*|export SOPS*)"
 
 # Editor
 export EDITOR=vim

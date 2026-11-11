@@ -9,7 +9,7 @@ macOS (Apple Silicon) dotfiles symlinked to `$HOME` via `install.sh`.
 ## Structure
 
 - `.zimrc` `.zshrc` `.gitconfig` `.gitignore_global` `.tmux.conf` `.ssh/config` → `~/` equivalents
-- `.mise.toml` → `~/.config/mise/config.toml`, `starship.toml` → `~/.config/starship.toml`
+- `.mise.toml` → `~/.config/mise/config.toml`, `starship.toml` → `~/.config/starship.toml`, `atuin/config.toml` → `~/.config/atuin/config.toml`
 - `vscode/` → VS Code User dir, `macos.sh` → system defaults, `Brewfile` → Homebrew packages
 
 ## Conventions
