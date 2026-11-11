@@ -1,0 +1,17 @@
+# Atuin records every command in its own database and ignores zsh's HISTORY_IGNORE,
+# so secrets need filtering here too (keep in sync with HISTORY_IGNORE in .zshrc)
+
+enter_accept = true
+
+# Built-in detection of known token formats (AWS, GitHub, Slack, Stripe, ...)
+secrets_filter = true
+
+# Regexes; a matching command is never saved
+history_filter = [
+  '(?i)(token|password|passwd|secret|api_?key|access_?key)\w*=',
+  '^vault login',
+  '^export (AZURE|GCP|SOPS)',
+]
+
+[sync]
+records = true

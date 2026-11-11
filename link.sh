@@ -29,6 +29,9 @@ link_file "$DOTFILES_DIR/starship.toml" ~/.config/starship.toml
 mkdir -p ~/.config/mise
 link_file "$DOTFILES_DIR/.mise.toml" ~/.config/mise/config.toml
 
+mkdir -p ~/.config/atuin
+link_file "$DOTFILES_DIR/atuin/config.toml" ~/.config/atuin/config.toml
+
 # SSH config — only link if no existing config
 if [[ ! -f ~/.ssh/config ]]; then
   mkdir -p ~/.ssh && chmod 700 ~/.ssh
